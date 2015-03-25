@@ -1,1 +1,15 @@
 http://techstream.org/Web-Development/PHP/Multiple-File-Upload-with-PHP-and-MySQL
+
+check the below to read Raw data from $_POST ed  form/page
+1st Method
+===========
+$a_data = array();
+parse_raw_http_request($a_data);
+var_dump($a_data);
+
+2nd Method
+==========
+$result = [];
+$rawPost = file_get_contents('php://input');
+mb_parse_str($rawPost, $result);
+var_dump($result);
